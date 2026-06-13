@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* ---- Design tokens — "Civic Editorial" -----------------------------------
+   A deliberate, restrained system: warm paper, near-black ink, one trusted
+   green, and a deep forest for dark bands. A display serif (system Georgia
+   stack) carries the editorial voice for headings; body stays on the system
+   sans so the page is fast on low-end devices and slow networks — no web
+   font is downloaded.                                                        */
+@theme {
+  /* Surfaces & text */
+  --color-bg: #f6f5f1;          /* warm paper */
+  --color-surface: #ffffff;
+  --color-ink: #15170f;         /* near-black, faintly warm */
+  --color-muted: #5b6157;
+  --color-line: #e4e2d8;        /* hairline */
+
+  /* Brand green */
+  --color-primary: #0b7a4b;
+  --color-primary-dark: #064a2e;
+  --color-primary-soft: #e7f1ea;
+
+  /* Editorial extras */
+  --color-forest: #0c2a1d;      /* deep green for the contact band */
+  --color-sand: #ece6d8;        /* warm fill */
+  --color-accent: #b5121b;      /* flag red — emphasis only */
+  --color-warn-soft: #fdf3e7;
+  --color-warn-ink: #8a5a12;
+
+  /* Type — serif display vs. system sans body for editorial contrast */
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  --font-display: Georgia, Cambria, "Times New Roman", "Noto Serif", serif;
+
+  /* Radii — editorial leans tighter than the default rounded look */
+  --radius-card: 0.5rem;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Display headings: optical sizing on, slightly tightened tracking. Applied
+   via the Tailwind `font-display` utility generated from --font-display. */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+/* Small uppercase eyebrow above section titles. Colour is set per-section so
+   it can sit on light or dark bands. */
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Visible, consistent focus for keyboard users across all controls. */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Print: produce a clean paper guide when users print instead of using PDF. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}

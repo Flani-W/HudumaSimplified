@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Huduma Simplified">
+  <rect width="512" height="512" fill="#0b7a4b"/>
+  <!-- Content kept within the central 80% safe zone for maskable cropping. -->
+  <rect x="146" y="190" width="220" height="20" rx="10" fill="#ffffff" opacity="0.9"/>
+  <rect x="146" y="302" width="220" height="20" rx="10" fill="#ffffff" opacity="0.9"/>
+  <rect x="146" y="246" width="220" height="20" rx="10" fill="#b5121b"/>
+  <path d="M198 180 h34 v152 h-34 z" fill="#ffffff"/>
+  <path d="M280 180 h34 v152 h-34 z" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,18 @@
+# Render Blueprint — deploys HudumaSimplified as a static site (free tier).
+# This is a Next.js static export (output: "export"), so there is NO server and
+# NO start command. Render just serves the prebuilt HTML in ./out.
+# Docs: https://render.com/docs/static-sites
+services:
+  - type: web
+    runtime: static
+    name: huduma-simplified
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./out
+    # Clean URLs: the export uses trailingSlash, so each route is a real
+    # folder/index.html (e.g. out/about/index.html). No SPA catch-all rewrite —
+    # that would break the per-route HTML files.
+    routes:
+      # Serve Next's exported 404 page for unknown paths.
+      - type: rewrite
+        source: /404
+        destination: /404.html
