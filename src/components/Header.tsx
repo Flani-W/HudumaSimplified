@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useI18n } from "@/i18n/I18nProvider";
-import { LocaleToggle } from "@/components/LocaleToggle";
+import { LocalePicker } from "@/components/LocalePicker";
 
 export function Header() {
   const { t } = useI18n();
@@ -41,7 +41,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <LocaleToggle />
+          <LocalePicker />
         </div>
       </div>
     </header>

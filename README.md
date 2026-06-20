@@ -13,8 +13,8 @@ required documents, real fees, timeline, and a downloadable PDF.
 
 - **7 real services**: birth certificate, national ID, passport, KRA PIN, driving
   licence, single business permit, certificate of good conduct.
-- **Fully bilingual (EN/SW)** — one toggle switches the whole UI and all content;
-  the choice persists per device.
+- **Fully bilingual (EN/SW)** — a language dropdown switches the whole UI and all
+  content; the choice persists per device.
 - **Interactive checklist** per guide with progress saved in `localStorage`.
 - **Offline PDF download** of any guide in the active language (jsPDF).
 - **Installable PWA** with a service worker: the app shell and visited guides load
